@@ -1,0 +1,30 @@
+name: Unit Test
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Runs a set of commands using the runners shell
+      - name: Execute Go Tests
+        run: |
+          # Terminal Configuration
+          GREEN='\033[0;32m' # Green
+          NC='\033[0m' # No Color
+
+          # Go Test Command
+          COMMAND="go test -v --bench . --benchmem"
+
+          # Loop through tests
+          for d in ./*
+          do
+              echo -e "${GREEN}EXECUTING TESTS on $d ${NC}"
+              (cd "$d" && $COMMAND)
+          done

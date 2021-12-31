@@ -1,0 +1,22 @@
+package cars
+
+// Constants
+const CarsPerHour = 100.0
+const CarsPerMin = 60.0
+
+// CalculateWorkingCarsPerHour calculates how many working cars are
+// produced by the assembly line every hour
+func CalculateWorkingCarsPerHour(productionRate int, successRate float64) float64 {
+	return float64(productionRate) * (successRate / CarsPerHour)
+}
+
+// CalculateWorkingCarsPerMinute calculates how many working cars are
+// produced by the assembly line every minute
+func CalculateWorkingCarsPerMinute(productionRate int, successRate float64) int {
+	return int(CalculateWorkingCarsPerHour(productionRate, successRate) / CarsPerMin)
+}
+
+// CalculateCost works out the cost of producing the given number of cars
+func CalculateCost(carsCount int) uint {
+	return uint(carsCount/10*95000 + carsCount%10*10000)
+}

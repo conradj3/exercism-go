@@ -25,4 +25,4 @@ jobs:
           VALIDATE_GO: true
           DISABLE_ERRORS: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BRANCH: ${{ github.base_ref }}
+          DEFAULT_BRANCH: main

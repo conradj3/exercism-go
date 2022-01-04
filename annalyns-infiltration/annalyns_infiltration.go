@@ -4,9 +4,8 @@ package annalyn
 func CanFastAttack(knightIsAwake bool) bool {
 	if knightIsAwake {
 		return false
-	} else {
-		return true
 	}
+	return !knightIsAwake
 }
 
 // CanSpy can be executed if at least one of the characters is awake

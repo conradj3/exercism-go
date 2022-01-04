@@ -25,7 +25,7 @@ func FixBirdCountLog(birdsPerDay []int) []int {
 	newBirds := birdsPerDay
 	for i := 0; i < len(newBirds); i++ {
 		if i%2 == 0 {
-			newBirds[i] += 1
+			newBirds[i]++
 		}
 	}
 	return newBirds

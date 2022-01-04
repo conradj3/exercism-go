@@ -2,18 +2,20 @@ package speed
 
 import "math"
 
+// Car implements a remote controlled car.
 type Car struct {
-	battery      int
-	batteryDrain int
 	speed        int
-	distance     int
+	batteryDrain int
+
+	battery  int
+	distance int
 }
 
 type Track struct {
 	distance int
 }
 
-// NewCar creates a new remote controlled car with full battery and given specifications.
+// NewCar creates a new car with given specifications.
 func NewCar(speed, batteryDrain int) Car {
 	return Car{
 		battery:      100,

@@ -23,7 +23,7 @@ jobs:
           COMMAND="go test -v --bench . --benchmem"
 
           # Loop through tests
-          for d in ./*
+          for d in ./go/*
           do
               echo -e "${GREEN}EXECUTING TESTS on $d ${NC}"
               (cd "$d" && $COMMAND)
